@@ -1,0 +1,57 @@
+#!/usr/bin/gnuplot
+#
+# This is a script for gnuplot which will make nice graphs from the data 
+# files created with the logger. 
+#
+# Output is currently two svg images.
+#
+# Typically this command is called from plot.sh, which is found in the bin 
+# directory.
+reset
+
+set terminal svg size 830,500 fname 'Verdana' fsize 9
+set output heart_rate_out
+
+# define axis
+# remove border on top and right and set color to gray
+set style line 11 lc rgb '#808080' lt 1
+#set border 3 back ls 11
+#set tics nomirror
+# define grid
+set style line 12 lc rgb '#808080' lt 0 lw 1
+set grid back ls 12
+
+# color definitions
+set style line 1 lc rgb '#ff1010' pt 1 ps 1 lt 1 lw 1 # --- red
+set style line 2 lc rgb '#1010ff' pt 1 ps 1 lt 1 lw 1 # --- blue
+set style line 3 lc rgb '#10ff10' pt 1 ps 1 lt 1 lw 1 # --- green 
+
+set key bottom right
+
+
+set xlabel 'Elapsed Time (in minutes)'
+set ylabel 'Heartrate'
+set xrange [:]
+set yrange [60:210]
+
+# === plot heartrate ===
+plot session_csv u 3:7 t 'Heartrate' w lines ls 1, \
+     session_csv u 3:8 t '30 second avg. HR' w lines ls 3, \
+     session_csv u 3:11 t 'Target Heartrate' w lines ls 2
+
+# === plot speed, incline ===
+set terminal svg size 875,500 fname 'Verdana' fsize 9
+set output speed_incline_out
+
+set xlabel 'Elapsed Time (in minutes)'
+set ylabel 'Speed (feet per minute)'
+set y2label 'Incline (in degrees)'
+set xrange [:]
+set yrange [-5:35]
+set y2range [10:-30]
+
+set ytics nomirror
+set y2tics -20, 5
+
+plot session_csv u 3:5 t 'speed' w lines ls 1, \
+     session_csv u 3:6 t 'incline' w lines ls 2 axis x1y2 

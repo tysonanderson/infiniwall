@@ -30,7 +30,7 @@ int main (void)
     std::cout << "  --begin set in TEN SECONDS!" << std::endl;
     sleep(10);
     std::cout << "begin set " << set_counter << " of " << SETS << std::endl;
-    SHM::req_speed->set(22);  
+    SHM::req_speed->set(18);  
     SHM::req_incline->set(-3);
     sleep(60);
     std::cout << "  rest " << set_counter << " of " << SETS << std::endl;

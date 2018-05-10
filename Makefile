@@ -1,5 +1,6 @@
 .PHONY: clean
-BINARIES = cat_shm cli_incline cli_log cli_speed heartrate \
+
+BINARIES = anaerobic_tracker cat_shm cli_incline cli_log cli_speed heartrate \
            hr_tracker kiosk_sim logger mkshm scripted_session timestamp
 
 BINDIR = ./bin/

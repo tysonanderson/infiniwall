@@ -81,7 +81,7 @@ int main (void)
       break;
     } 
     sleep (1);
-  } while ( WORK_HR < SESSION_COMPLETE_HR);
+  } while ( WORK_HR <= SESSION_COMPLETE_HR);
 
   SHM::req_speed->set(REST_SPEED);
   SHM::req_incline->set(REST_INCLINE);

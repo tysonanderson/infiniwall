@@ -20,6 +20,7 @@ int main (void)
   {
     cout << "timestamp          : " << SHM::timestamp->get() << endl;
     cout << "start time         : " << SHM::start_time->get() << endl << endl;
+    cout << "duration           : " << SHM::duration->get() << endl << endl;
 
     cout << "curr_halt          : " << SHM::curr_halt->get() << endl;
     cout << "curr_speed         : " << SHM::curr_speed->get() << endl;
@@ -36,8 +37,8 @@ int main (void)
     cout << "heartrate driven   : " << SHM::hr_driven->get() << endl;
     cout << "heartrate target   : " << SHM::hr_target->get() << endl << endl;
 
-    cout << "elevation          : " << SHM::elevation->get() << endl;
     cout << "log active         : " << SHM::log_active->get() << endl << endl;
+    cout << "elevation          : " << SHM::elevation->get() << endl;
  
     cout << "========================================" << endl;
     

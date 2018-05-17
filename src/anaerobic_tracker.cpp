@@ -12,13 +12,15 @@
 // set the workout duration here: 
 //
    const int SESSION_COMPLETE_HR = 180;
-         int WORK_HR = 140;
+         int WORK_HR = 138;
    const int WORK_SPEED = 19;
    const int WORK_INCLINE = 0;
    
-         int REST_AVG_HR = 110;
+         int REST_AVG_HR = 103;
    const int REST_SPEED = 12;
    const int REST_INCLINE = 8;
+
+   const int SPEED_INC = 7;
 //
 // ===========================================
 
@@ -30,15 +32,18 @@ int main (void)
   State state = REST;
 
   SHM::connect_existing_shm();
+  SHM::hr_driven->set(0);
+  SHM::log_active->set(1);
   start_time = SHM::timestamp->get();
   SHM::start_time->set(start_time);  
-  SHM::log_active->set(1);
-  SHM::hr_driven->set(1);
   
   
   std::cout << "Get Ready to Climb in 30 seconds." << std::endl;
   SHM::req_speed->set(0);  
-  sleep(30);
+  sleep(20);
+  std::cout << "Get Ready to Climb in 10 seconds." << std::endl;
+  sleep(10);
+  SHM::hr_driven->set(1);
 
   do
   {
@@ -47,8 +52,9 @@ int main (void)
       case WORK :
         if ( SHM::hr->get() > WORK_HR)
         {
+          WORK_HR += SPEED_INC;
+
           state = REST;
-          REST_AVG_HR += 5;
           SHM::req_speed->set(REST_SPEED);
           SHM::req_incline->set(REST_INCLINE);
           SHM::hr_target->set(REST_AVG_HR);
@@ -66,8 +72,9 @@ int main (void)
       case REST :
         if ( SHM::hr_avg->get() < REST_AVG_HR)
         {
+          REST_AVG_HR += SPEED_INC;
+
           state = WORK;
-          WORK_HR += 5;
           SHM::req_speed->set(WORK_SPEED);
           SHM::req_incline->set(WORK_INCLINE);
           SHM::hr_target->set(WORK_HR);
@@ -83,17 +90,12 @@ int main (void)
     sleep (1);
   } while ( WORK_HR <= SESSION_COMPLETE_HR);
 
-  SHM::req_speed->set(REST_SPEED);
-  SHM::req_incline->set(REST_INCLINE);
-  SHM::hr_target->set(REST_AVG_HR);
-  std::cout << "BEGIN FINAL REST SET : " << REST_AVG_HR << std::endl;
-  sleep (15);
   SHM::req_speed->set(0);
-  sleep (60);
   std::cout << "WORKOUT COMPLETE!!! " << std::endl;
   std::cout << "WORKOUT COMPLETE!!! " << std::endl;
   std::cout << "WORKOUT COMPLETE!!! " << std::endl;
   SHM::log_active->set(0);
+  SHM::hr_driven->set(0);
   
  return 0;
 }

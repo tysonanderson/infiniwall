@@ -1,7 +1,8 @@
 .PHONY: clean
 
 BINARIES = anaerobic_tracker cat_shm cli_incline cli_log cli_speed heartrate \
-           hr_tracker kiosk_sim logger mkshm scripted_session timestamp
+           hr_tracker kiosk_sim logger mkshm scripted_session timestamp \
+           ct5k_w1
 
 BINDIR = ./bin/
 SOURCEDIR = ./src/

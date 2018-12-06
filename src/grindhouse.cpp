@@ -25,8 +25,11 @@ int main (void)
 
   for (int set_counter = 1; set_counter <= SETS; ++set_counter)
   {
+    SHM::req_speed->set(22);  
+    sleep(2);
+    SHM::req_speed->set(0);  
     std::cout << "Get Ready to Climb." << std::endl;
-    sleep(10);
+    sleep(8);
     SHM::req_speed->set(22);  
     std::cout << "begin set " << set_counter << " of " << SETS << std::endl;
     sleep(60);

@@ -18,26 +18,30 @@ const int SETS = 8;
 int main (void)
 {
   SHM::connect_existing_shm();
-  SHM::start_time->set(SHM::timestamp->get());  
+  SHM::session_start_time->set(SHM::timestamp->get());  
   SHM::log_active->set(1);
 
-  std::cout << "Get Ready to Climb in 40 seconds." << std::endl;
+  std::cout << "Get Ready to Climb." << std::endl;
   SHM::req_speed->set(0);  
-  sleep(30);
+  sleep(15);
+  SHM::req_speed->set(22);  
+  SHM::req_incline->set(8);
+  std::cout << "5 min warmup." << std::endl;
+  sleep(5 * 60);  // 5 min warmup
 
   for (int set_counter = 1; set_counter <= SETS; ++set_counter)
   {
-    std::cout << "  --begin set in TEN SECONDS!" << std::endl;
-    sleep(10);
-    std::cout << "begin set " << set_counter << " of " << SETS << std::endl;
-    SHM::req_speed->set(18);  
     SHM::req_incline->set(-3);
+    std::cout << "begin set " << set_counter << " of " << SETS << std::endl;
     sleep(60);
+    SHM::req_incline->set(8);
     std::cout << "  rest " << set_counter << " of " << SETS << std::endl;
-    SHM::req_speed->set(0);  
-    sleep(80);
+    sleep(90);
   }
+  std::cout << "5 min cooldown." << std::endl;
+  sleep(5 * 60);  // 5 min cooldown
   std::cout << "WORKOUT COMPLETE!!! " << std::endl;
+  SHM::req_speed->set(0);  
   SHM::log_active->set(0);
   
  return 0;

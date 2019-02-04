@@ -35,7 +35,7 @@ int main (void)
   SHM::hr_driven->set(0);
   SHM::log_active->set(1);
   start_time = SHM::timestamp->get();
-  SHM::start_time->set(start_time);  
+  SHM::session_start_time->set(start_time);  
   
   
   std::cout << "Get Ready to Climb in 30 seconds." << std::endl;
@@ -65,7 +65,7 @@ int main (void)
         else 
         {
           std::cout << "  " << SHM::hr->get() <<  "  of  " << WORK_HR 
-                    << "  --  " << SHM::duration->get() << std::endl;
+                    << "  --  " << SHM::set_duration->get() << std::endl;
         }
       break;
 
@@ -83,7 +83,7 @@ int main (void)
         else 
         {
           std::cout << "  " << SHM::hr_avg->get() <<  "  of  " << REST_AVG_HR 
-                    << "  --  " << SHM::duration->get() << std::endl;
+                    << "  --  " << SHM::set_duration->get() << std::endl;
         }
       break;
     } 

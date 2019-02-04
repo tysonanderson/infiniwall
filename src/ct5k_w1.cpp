@@ -18,14 +18,14 @@ const int SETS = 8;
 int main (void)
 {
   SHM::connect_existing_shm();
-  SHM::start_time->set(SHM::timestamp->get());  
+  SHM::session_start_time->set(SHM::timestamp->get());  
   SHM::log_active->set(1);
 
   std::cout << "Get Ready to Climb." << std::endl;
   SHM::req_speed->set(0);  
   sleep(15);
   SHM::req_speed->set(22);  
-  SHM::req_incline->set(8);
+  SHM::req_incline->set(-5);
   std::cout << "5 min warmup." << std::endl;
   sleep(5 * 60);  // 5 min warmup
 

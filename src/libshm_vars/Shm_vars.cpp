@@ -1,5 +1,5 @@
 //=============================================================================
-// shm_variables.h 
+// shm_variables.cpp
 // 
 // A collection of variables in SHared Memory (SHM).  These variables
 // can be used across processes running on this system. This acts as a 
@@ -7,14 +7,18 @@
 // climbing wall.   
 //=============================================================================
 #include "Shm_vars.h"
-#include <string>
+using std::string;
 
 namespace SHM
 {
 
   Shm<uint64_t>*     timestamp;  
-  Shm<uint64_t>*     start_time;  
-  Shm<float>*        duration;
+  Shm<uint64_t>*     session_start_time;  
+  Shm<float>*        session_duration;
+
+  Shm<uint64_t>*     set_start_time;
+  Shm<float>*        set_duration;
+  Shm<int>*          set_count;
 
   Shm<bool>*         curr_halt;    
   Shm<int>*          curr_speed;   
@@ -36,8 +40,12 @@ namespace SHM
   void allocate_new_shm (void)
   {
     timestamp = new (Shm<uint64_t>::alloc_new("timestamp")) Shm<uint64_t>();
-    start_time = new (Shm<uint64_t>::alloc_new("start_time")) Shm<uint64_t>();
-    duration = new (Shm<float>::alloc_new("duration")) Shm<float>();
+    session_start_time = new (Shm<uint64_t>::alloc_new("session_start_time")) Shm<uint64_t>();
+    session_duration = new (Shm<float>::alloc_new("session_duration")) Shm<float>();
+
+    set_start_time = new (Shm<uint64_t>::alloc_new("set_start_time")) Shm<uint64_t>();
+    set_duration = new (Shm<float>::alloc_new("set_duration")) Shm<float>();
+    set_count = new (Shm<int>::alloc_new("set_count")) Shm<int>();
 
     curr_halt = new (Shm<bool>::alloc_new("curr_halt")) Shm<bool>();
     curr_speed= new (Shm<int>::alloc_new("curr_speed")) Shm<int>();
@@ -57,8 +65,12 @@ namespace SHM
     log_active = new (Shm<bool>::alloc_new("log_active")) Shm<bool>();
 
     timestamp->init_data(0);
-    start_time->init_data(0);
-    duration->init_data(0.0);
+    session_start_time->init_data(0);
+    session_duration->init_data(0.0);
+
+    set_start_time->init_data(0);
+    set_duration->init_data(0.0);
+    set_count->init_data(0);
 
     curr_halt->init_data(true);
     curr_speed->init_data(0);
@@ -85,8 +97,12 @@ namespace SHM
   void connect_existing_shm (void)
   {
     timestamp  = new (Shm<uint64_t>::alloc_ex("timestamp"))Shm<uint64_t>();
-    start_time = new (Shm<uint64_t>::alloc_ex("start_time"))Shm<uint64_t>();
-    duration = new (Shm<float>::alloc_ex("duration"))Shm<float>();
+    session_start_time = new (Shm<uint64_t>::alloc_ex("session_start_time"))Shm<uint64_t>();
+    session_duration = new (Shm<float>::alloc_ex("session_duration"))Shm<float>();
+
+    set_start_time = new (Shm<uint64_t>::alloc_ex("set_start_time"))Shm<uint64_t>();
+    set_duration = new (Shm<float>::alloc_ex("set_duration"))Shm<float>();
+    set_count = new (Shm<int>::alloc_ex("set_count")) Shm<int>();
 
     curr_halt  = new (Shm<bool>::alloc_ex("curr_halt")) Shm<bool>();
     curr_speed = new (Shm<int>::alloc_ex("curr_speed")) Shm<int>();

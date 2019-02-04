@@ -26,7 +26,7 @@ int main (void)
 
   SHM::connect_existing_shm();
   start_time = SHM::timestamp->get();
-  SHM::start_time->set(start_time);  
+  SHM::session_start_time->set(start_time);  
   SHM::hr_target->set(target_heartrate);
   SHM::log_active->set(1);
   SHM::hr_driven->set(1);

@@ -40,7 +40,7 @@ int main (void)
   while (true) 
   {
     // check that start time is still the same as the recorded start time.
-    if(     (recorded_start_time == SHM::start_time->get())
+    if(     (recorded_start_time == SHM::session_start_time->get())
          && (recorded_start_time != 0))
     {
       if ( SHM::log_active->get())
@@ -50,7 +50,7 @@ int main (void)
     }
     else 
     {
-      if (SHM::start_time->get() != 0)
+      if (SHM::session_start_time->get() != 0)
       {
         init_log();
       }
@@ -72,11 +72,11 @@ void init_log(void)
   }
 
   // wait till user sets start time, then make a record of the start time.
-  recorded_start_time = SHM::start_time->get();
+  recorded_start_time = SHM::session_start_time->get();
   while (recorded_start_time == 0)
   { 
     sleep(1);
-    recorded_start_time = SHM::start_time->get();
+    recorded_start_time = SHM::session_start_time->get();
   }
 
   std::string file_name = time_to_string (recorded_start_time);
@@ -91,7 +91,7 @@ void init_log(void)
   elevation = 0.0;
   SHM::elevation->set(0.0);
   duration = 0.0;
-  SHM::duration->set(0.0);
+  SHM::session_duration->set(0.0);
   std::cout << "started new log file: " << file_name << std::endl;
 }
 
@@ -133,11 +133,11 @@ void pull_and_log_climbing_wall_data()
   elevation += speed / 60.0;  // distance traveled in a single second.
   SHM::elevation->set(elevation);
 
-  duration = ((SHM::timestamp->get() - SHM::start_time->get()) / 60.0);
-  SHM::duration->set(duration);
+  duration = ((SHM::timestamp->get() - SHM::session_start_time->get()) / 60.0);
+  SHM::session_duration->set(duration);
 
   log << SHM::timestamp->get() << ", " 
-      << SHM::start_time->get() << ", " 
+      << SHM::session_start_time->get() << ", " 
       << duration << ", " 
 
       << SHM::curr_halt->get() << ", " 

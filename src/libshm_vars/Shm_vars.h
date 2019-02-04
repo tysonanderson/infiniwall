@@ -13,13 +13,22 @@
 #include <string>
 #include <iostream>
 
+using std::string;
+
 namespace SHM
 {
-  // timestamps are always given in seconds, from epoc.  1970/01/01 
-  extern SHM::Shm<uint64_t>* timestamp;    // the current timestamp.  NOW. 
-  extern SHM::Shm<uint64_t>* start_time;   // our start time.  for recording
-                                           // session or log time start.
-  extern SHM::Shm<float>*    duration;     // duration in minutes.  
+  // note: timestamps are always given in seconds, from epoc.  1970/01/01 
+  // the current timestamp.  i.e: NOW. 
+  extern SHM::Shm<uint64_t>*    timestamp;            
+  extern SHM::Shm<uint64_t>*    session_start_time;   // our session start time.
+  extern SHM::Shm<float>*       session_duration;     // total session duration
+                                                      // in minutes.
+
+  extern SHM::Shm<uint64_t>*    set_start_time;       // our set start time.  
+  extern SHM::Shm<float>*       set_duration;         // total set duration 
+  extern SHM::Shm<int>*         set_count;            // what set is this?
+                                         
+
 
   // cur values represents the one most recently sent to the climbing wall.
   // Conceptually, only the process which manages serial communication to the 

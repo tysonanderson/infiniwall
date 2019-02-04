@@ -17,10 +17,19 @@ int main (void)
   SHM::connect_existing_shm();
 
   for(;;)
-  {
+  { 
+    int set_total_seconds_remaining = (SHM::set_start_time->get() + (SHM::set_duration->get()*60)) - SHM::timestamp->get();    
+    int set_mins_remaining = set_total_seconds_remaining % 60;    
+    int set_remainder_seconds_remaining = set_total_seconds_remaining - (set_mins_remaining * 60);    
+
     cout << "timestamp          : " << SHM::timestamp->get() << endl;
-    cout << "start time         : " << SHM::start_time->get() << endl << endl;
-    cout << "duration           : " << SHM::duration->get() << endl << endl;
+    cout << "session start time : " << SHM::session_start_time->get() << endl << endl;
+    cout << "session duration   : " << SHM::session_duration->get() << endl << endl;
+    
+    cout << "set start time     : " << SHM::session_start_time->get() << endl << endl;
+    cout << "set count          : " << SHM::set_count->get() << endl << endl;
+    cout << "set time remaining : " << SHM::set_count->get() << endl << endl;
+    cout << "set duration       : " << SHM::session_duration->get() << endl << endl;
 
     cout << "curr_halt          : " << SHM::curr_halt->get() << endl;
     cout << "curr_speed         : " << SHM::curr_speed->get() << endl;

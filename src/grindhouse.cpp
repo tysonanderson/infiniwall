@@ -13,7 +13,7 @@
 #include "Shm_vars.h"
 #include <iostream>
 
-const int SETS = 8; 
+const int SETS = 5; 
 
 int main (void)
 {
@@ -32,10 +32,10 @@ int main (void)
     sleep(8);
     SHM::req_speed->set(22);  
     std::cout << "begin set " << set_counter << " of " << SETS << std::endl;
-    sleep(60);
+    sleep(2*60);
     SHM::req_speed->set(0);  
     std::cout << "  rest " << set_counter << " of " << SETS << std::endl;
-    sleep(170);
+    sleep((4*60)-10);
   }
   SHM::req_speed->set(0);  
   std::cout << "WORKOUT COMPLETE!!! " << std::endl;

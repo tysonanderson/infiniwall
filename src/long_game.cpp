@@ -1,8 +1,7 @@
 //=============================================================================
 // grindhouse.cpp 
 // 
-// This program sets up a workout consisting of sets and reps.   
-// It also interacts with both the logger and the climbing wall correctly.
+// This program sets up a workout 
 //
 // depends on SHM entries having been created, the timestamp being kept up to
 // date, the logger running, and the kios_sim running.

@@ -1,8 +1,46 @@
-PIC16C63A-20/SP
-Moterola
-0107074
+The PIC on the LOGIC BOARD:
+----------------------------------------------
+  PIC16C63A-20/SP
+  Moterola
+  0107074
+==============================================
+Program Memory (EPROM) x14   :  4k
+Data Memory    (Bytes) x8    :  192
+PINS                         :  28
+Parallel Slave Port          :  NONE
+Capture/Compare/PWM Modules  :  2
+Timer Modules                :  3
+A/D Channels                 :  NONE
+Serial Communication         :  SPI/I^2, USART
+In Circut Serial Programming :  YES
+Brown-out Reset              :  YES
+Interrupt Sources            :  10
 
-------
-14 + 14 legs
+----------------------------------------------
+DATA SHEET: https://ww1.microchip.com/downloads/en/DeviceDoc/30605D.pdf
+----------------------------------------------
 
-probes on legs 11 and 12 from the top on the right side.
+  14 + 14 legs
+
+  probes on legs 17, 18 are probed.  
+
+                 PIN      PIN
+MCLR/VPP         1        28
+RA/AN 0          2        27
+RA/AN 1          3        26
+RA/AN 2          4        25 
+RA/AN 3 VREF     5        24
+RA4/TOCKI        6        23
+RA5/SS/AN4       7        22
+VSS              8        21
+OSC1/CLKIN       9        20
+OSC2/CLKOUT      10       19
+RC0/T1OSO/T1CK1  11       18  RC7/RX/DT
+RC1/T1OSO/CPP2   12       17  RC6/TX/DT
+RC2/CPP1         13       16  RC5/SDO
+RC3/SCK/SCL      14       15  RC4/SDI/SDA
+
+
+
+18
+17 

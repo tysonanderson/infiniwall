@@ -1,0 +1,8 @@
+PIC16C63A-20/SP
+Moterola
+0107074
+
+------
+14 + 14 legs
+
+probes on legs 11 and 12 from the top on the right side.

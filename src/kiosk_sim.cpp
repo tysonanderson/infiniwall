@@ -363,7 +363,8 @@ int main (void)
   SHM::connect_existing_shm();
 
   kiosk_sim kiosk;
-  kiosk.set_serial_port("/dev/ttyS1");
+  //kiosk.set_serial_port("/dev/ttyS1");
+  kiosk.set_serial_port("/dev/ttyUSB0");
   kiosk.connect();
   kiosk.run();
   return 0;

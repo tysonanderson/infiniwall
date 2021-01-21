@@ -1,11 +1,13 @@
 climbing_wall
 =============
 
-This project implements an open-source controller for the Ascent FunRock 
-motorized climbing wall.  The software currently targets the linux platform.  
+This project allows you to control the motorized speed and incline 
+of your Ascent FunRock climbing wall from a Linux computer using Serial
+communication.  
+
 Please review the open issues before running this code.
 
-![heartrate graph](/docs/climbing_wall.jpg)
+![climbing wall](/docs/climbing_wall.jpg)
 
 ## project status
 While one persistent issue lingers on (likely in the closed-source 
@@ -19,8 +21,8 @@ The code allows for control of the climbing wall's two motors:
   
 This allows for the creation of workout sessions that follow pre-scripted 
 sequences.  As well as session which are not pre-scripted, such as using the 
-climber's real time heart-rate to dynamically adjust the speed or incline of the 
-climbing wall. 
+climber's real time heart-rate data to dynamically adjust the speed or 
+incline of the climbing wall. 
 
 ## logging and graphs: 
 The code also allows for recording of logs and generation of graphs based on 

@@ -8,17 +8,18 @@ Please review the open issues before running this code.
 ![heartrate graph](/docs/climbing_wall.jpg)
 
 ## project status
-While one persistent bug lingers on, the code base is stable, and I have been
+While one persistent issue lingers on (likely in the closed-source 
+microprocessor firmware itself), the code base is stable, and I have been
 happily using variations of it myself for years. 
 
 ## basic operation 
 The code allows for control of the climbing wall's two motors:
   - one for speed
-  - one for incline
+  - one for incline  
   
 This allows for the creation of workout sessions that follow pre-scripted 
 sequences.  As well as session which are not pre-scripted, such as using the 
-climber's real time heart-rate to dynamically adjust the speed or slope of the 
+climber's real time heart-rate to dynamically adjust the speed or incline of the 
 climbing wall. 
 
 ## logging and graphs: 

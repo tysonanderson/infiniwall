@@ -44,3 +44,8 @@ RC3/SCK/SCL      14       15  RC4/SDI/SDA
 
 18
 17 
+
+
+# Programmer
+https://www.dataman.com/dataman-48pro2c-super-fast-universal-isp-programmer.html
+Dataman 48Pro2C Super Fast Universal ISP Programmer

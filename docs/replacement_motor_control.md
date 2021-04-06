@@ -16,9 +16,12 @@ Duty Continuous
 Torque 18.0  Inch/Lbs. 
 Horse Power: 1/2 
 
-```
-5 mins of searching the web brings up this controller:
-[Omega OMDC-130LC100]
 
+5 mins of searching the web brings up this controller:
+[Omega OMDC-130LC100] DC Motor Speed Control with Reversing Capability
+
+To change directions, I would need a [relay], like this one.
+```
 <!-- Links -->
 [Omega OMDC-130LC100]: https://www.omega.com/en-us/control-monitoring/motion-and-position/speed-controllers/omdc-130-series/p/OMDC-130LC100
+[relay]: https://wiki.seeedstudio.com/Grove-SPDT_Relay_30A/#:~:text=The%20SPDT%20Relay(30A)%20is,normally%20closed%20terminal%20have%20continuity.

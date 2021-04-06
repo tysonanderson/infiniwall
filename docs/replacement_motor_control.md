@@ -22,7 +22,9 @@ Horse Power: 1/2
 
 To change directions, I would need a [relay], like this one.
 
-
+Another tool that might be useful is a [voltage simulator]
 <!-- Links -->
 [Omega OMDC-130LC100]: https://www.omega.com/en-us/control-monitoring/motion-and-position/speed-controllers/omdc-130-series/p/OMDC-130LC100
 [relay]: https://wiki.seeedstudio.com/Grove-SPDT_Relay_30A/#:~:text=The%20SPDT%20Relay(30A)%20is,normally%20closed%20terminal%20have%20continuity.
+
+[voltage simulator]: https://plctools.com/analog-simulator-and-generator-with-lcd-0-10vdc-and-4-20ma/?gclid=CjwKCAjwjbCDBhAwEiwAiudBywzPKOBNzkBl22vg_1nG8vt0JkSl3Sjt2C_kO1iiuhbrtrwZ3A0K1hoClDMQAvD_BwE

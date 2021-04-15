@@ -26,6 +26,28 @@ Possibly use the circut from this [stack exchange post]
 
 Another tool that might be useful is a [voltage simulator]
 
+# Shop testing rig.  
+There is a youtube channel which discusses testing salvaged dc motors.  
+  - [Jeremy Fielding = How to Wire a Large DC Motor and Controll The Speed]
+
+In this video, he demonstrates using a Transformer to control the voltage, and a full bridge rectifier to convert the power.  
+His full bridge rectifier is 1000 volts, 50 amps.  
+
+Capacitor in parralell, but is out of scope. 
+
+```sh 
+   DC Motor Speed Control
+   KBIC-125
+
+   $40
+   input 115 V
+   output 0-130 VDC
+   8 ADC, 16 w heat sink.
+```
+
+
+Reversing switch
+maintained reversing switch
 
 
 <!-- Links -->
@@ -35,3 +57,5 @@ Another tool that might be useful is a [voltage simulator]
 [voltage simulator]: https://plctools.com/analog-simulator-and-generator-with-lcd-0-10vdc-and-4-20ma/?gclid=CjwKCAjwjbCDBhAwEiwAiudBywzPKOBNzkBl22vg_1nG8vt0JkSl3Sjt2C_kO1iiuhbrtrwZ3A0K1hoClDMQAvD_BwE
 
 [stack exchange post]:https://electronics.stackexchange.com/questions/425653/amplifier-for-10v-led-dimmer-control-using-raspberry-pi
+
+[Jeremy Fielding = How to Wire a Large DC Motor and Controll The Speed]: https://www.youtube.com/watch?v=ASywVBU0ZwE

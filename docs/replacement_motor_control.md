@@ -35,6 +35,8 @@ His full bridge rectifier is 1000 volts, 50 amps.
 
 Capacitor in parralell, but is out of scope. 
 
+Note: I have this test with the transformer up and working. 
+
 ```sh 
    DC Motor Speed Control
    KBIC-125
@@ -49,6 +51,7 @@ Capacitor in parralell, but is out of scope.
 Reversing switch
 maintained reversing switch
 
+[automationdirect motor controller]
 
 <!-- Links -->
 [Omega OMDC-130LC100]: https://www.omega.com/en-us/control-monitoring/motion-and-position/speed-controllers/omdc-130-series/p/OMDC-130LC100
@@ -59,3 +62,5 @@ maintained reversing switch
 [stack exchange post]:https://electronics.stackexchange.com/questions/425653/amplifier-for-10v-led-dimmer-control-using-raspberry-pi
 
 [Jeremy Fielding = How to Wire a Large DC Motor and Controll The Speed]: https://www.youtube.com/watch?v=ASywVBU0ZwE
+
+[automationdirect motor controller]: https://www.automationdirect.com/adc/overview/catalog/drives_-a-_soft_starters/dc_drives/high_voltage_(%3E_50v)/enclosed

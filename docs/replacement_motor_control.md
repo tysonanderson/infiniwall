@@ -17,6 +17,14 @@ Torque 18.0  Inch/Lbs.
 Horse Power: 1/2 
 </pre>
 
+
+### Current Favorites: 
+
+  - [automationdirect motor controller]
+with
+  - [0-10V voltage converter]
+
+
 5 mins of searching the web brings up this controller: <br/>
 [Omega OMDC-130LC100] DC Motor Speed Control with Reversing Capability
 
@@ -63,4 +71,6 @@ maintained reversing switch
 
 [Jeremy Fielding = How to Wire a Large DC Motor and Controll The Speed]: https://www.youtube.com/watch?v=ASywVBU0ZwE
 
-[automationdirect motor controller]: https://www.automationdirect.com/adc/overview/catalog/drives_-a-_soft_starters/dc_drives/high_voltage_(%3E_50v)/enclosed
+[automationdirect motor controller]: https://www.automationdirect.com/adc/shopping/catalog/drives_-a-_soft_starters/dc_drives/high_voltage_(%3E_50v)/open_frame_-z-_reversing/gsd7-120-10cr30
+
+[0-10V voltage converter]: http://www.icstation.com/voltage-converter-module-adjustable-converter-power-module-digital-analog-signal-p-12498.html?aid=372

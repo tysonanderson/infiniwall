@@ -73,4 +73,4 @@ maintained reversing switch
 
 [automationdirect motor controller]: https://www.automationdirect.com/adc/shopping/catalog/drives_-a-_soft_starters/dc_drives/high_voltage_(%3E_50v)/open_frame_-z-_reversing/gsd7-120-10cr30
 
-[0-10V voltage converter]: http://www.icstation.com/voltage-converter-module-adjustable-converter-power-module-digital-analog-signal-p-12498.html?aid=372
+[0-10V voltage converter]: https://www.amazon.com/gp/product/B08JTDJXLY/ref=ox_sc_act_title_1?smid=A2RFU0Q5Y99ZUG&psc=1

@@ -24,7 +24,8 @@ Horse Power: 1/2
 with
   - [0-10V voltage converter]
 
-
+<HR>
+  
 5 mins of searching the web brings up this controller: <br/>
 [Omega OMDC-130LC100] DC Motor Speed Control with Reversing Capability
 
